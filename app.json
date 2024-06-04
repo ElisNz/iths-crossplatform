@@ -3,6 +3,7 @@
     "name": "Twatter",
     "slug": "Twatter",
     "version": "1.0.0",
+    "owner": "elis.nilzen",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -28,10 +29,8 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "extra": {
-      "eas": {
-        "projectId": "deb6ef89-5a04-4091-bb3b-b0361f47028f"
-      }
-    }
+    "plugins": [
+      "expo-localization"
+    ]
   }
 }

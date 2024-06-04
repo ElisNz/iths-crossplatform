@@ -1,5 +1,5 @@
 import { ListItem } from "@rneui/themed";
-import { View, Text, FlatList, RefreshControl } from "react-native";
+import { View, Text, FlatList, RefreshControl, Button } from "react-native";
 
 import { useGetUsersQuery } from "../../store/api/usersApi";
 
@@ -25,6 +25,13 @@ const UserList = ({ navigation }) => {
               <ListItem.Content>
                 <ListItem.Title>{`${item.firstName} ${item.lastName}`}</ListItem.Title>
               </ListItem.Content>
+              <Button
+                title="Edit"
+                onPress={() => {
+                  navigation.navigate("UserForm", { user: item });
+                }}
+              />
+              <Button title="Delete" />
             </ListItem>
           )}
         />

@@ -1,4 +1,14 @@
 module.exports = {
   root: true,
-  extends: ["universe/native"],
+  rules: {
+    "no-console": "off",
+    "no-debugger": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
+    ],
+  },
+  extends: ["universe/native", "prettier"],
 };
