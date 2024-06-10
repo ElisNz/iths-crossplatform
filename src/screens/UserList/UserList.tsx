@@ -10,31 +10,34 @@ const UserList = ({ navigation }) => {
       {isLoading ? (
         <Text>Loading...</Text>
       ) : (
-        <FlatList
-          data={data}
-          refreshControl={
-            <RefreshControl refreshing={isLoading} onRefresh={refetch} />
-          }
-          renderItem={({ item }) => (
-            <ListItem
-              key={item.id}
-              onPress={() => {
-                navigation.navigate("UserInfo", { user: item });
-              }}
-            >
-              <ListItem.Content>
-                <ListItem.Title>{`${item.firstName} ${item.lastName}`}</ListItem.Title>
-              </ListItem.Content>
-              <Button
-                title="Edit"
+        <>
+          <Button title="Reload" onPress={refetch} />
+          <FlatList
+            data={data}
+            refreshControl={
+              <RefreshControl refreshing={isLoading} onRefresh={refetch} />
+            }
+            renderItem={({ item }) => (
+              <ListItem
+                key={item.id}
                 onPress={() => {
-                  navigation.navigate("UserForm", { user: item });
+                  navigation.navigate("UserInfo", { user: item });
                 }}
-              />
-              <Button title="Delete" />
-            </ListItem>
-          )}
-        />
+              >
+                <ListItem.Content>
+                  <ListItem.Title>{`${item.firstName} ${item.lastName}`}</ListItem.Title>
+                </ListItem.Content>
+                <Button
+                  title="Edit"
+                  onPress={() => {
+                    navigation.navigate("UserForm", { user: item });
+                  }}
+                />
+                <Button title="Delete" />
+              </ListItem>
+            )}
+          />
+        </>
       )}
     </View>
   );

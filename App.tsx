@@ -18,8 +18,8 @@ const UserListStack = createNativeStackNavigator();
 const UserListStackScreen = () => {
   return (
     <UserListStack.Navigator>
-      <UserListStack.Screen name="UserList" component={UserList} />
-      <UserListStack.Screen name="UserInfo" component={UserInfo} />
+      <UserListStack.Screen name="User List" component={UserList} />
+      <UserListStack.Screen name="User Info" component={UserInfo} />
     </UserListStack.Navigator>
   );
 };
